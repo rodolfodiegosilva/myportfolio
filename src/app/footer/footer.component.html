@@ -1,0 +1,63 @@
+<footer class="footer text-center bg-footer text-footer-text">
+    <div class="container">
+      <div class="row">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div *ngIf="profile.location" class="footer-contact-info mb-4 mt-4">
+                    <a target="_blank" href="https://www.google.com/maps/place/{{profile.location}}">
+                        <fa-icon class="mr-2" style="margin-bottom: 18px;" [icon]="['fas', 'map-marker-alt']" size="lg"></fa-icon><br>
+                        {{profile.location}}
+                    </a>
+                </div>
+                <div *ngIf="profile.email" class="footer-contact-info mb-4 mt-4">
+                    <a target="_blank" href="mailto:{{profile.mailto}}">
+                        <fa-icon class="mr-2" style="margin-bottom: 18px;" [icon]="['fas', 'envelope']" size="lg"></fa-icon><br>
+                        {{profile.email}}
+                    </a>
+                </div>
+             </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <ul class="list-inline mb-3">
+                    <li *ngIf="profile.facebook" class="list-inline-item mb-3">
+                        <a title="Facebook" class="media-bubble bg-primary rounded-circle text-footer mr-3" target="_blank" href="https://www.facebook.com/{{profile.facebook}}">
+                            <fa-icon [icon]="['fab', 'facebook-f']" size="1x"></fa-icon>
+                        </a>
+                    </li>
+                    <li *ngIf="profile.twitter" class="list-inline-item mb-3">
+                        <a title="Twitter" class="media-bubble bg-primary rounded-circle text-footer mr-3" target="_blank" href="https://www.twitter.com/{{profile.twitter}}">
+                            <fa-icon [icon]="['fab', 'twitter']" size="1x"></fa-icon>
+                        </a>
+                    </li>
+                    <li *ngIf="profile.linkedin" class="list-inline-item mb-3">
+                        <a title="LinkedIn" class="media-bubble bg-primary rounded-circle text-footer mr-3" target="_blank" href="https://www.linkedin.com/in/{{profile.linkedin}}">
+                            <fa-icon [icon]="['fab', 'linkedin']" size="1x"></fa-icon>
+                        </a>
+                    </li>
+                    <li *ngIf="profile.instagram" class="list-inline-item mb-3">
+                        <a title="Instagram" class="media-bubble bg-primary rounded-circle text-footer mr-3" target="_blank" href="https://www.instagram.com/{{profile.instagram}}">
+                            <fa-icon [icon]="['fab', 'instagram']" size="1x"></fa-icon>
+                        </a>
+                    </li>
+                    <li *ngIf="profile.github" class="list-inline-item mb-3">
+                        <a title="Github" class="media-bubble bg-primary rounded-circle text-footer mr-3" target="_blank" href="https://www.github.com/{{profile.github}}">
+                            <fa-icon [icon]="['fab', 'github']" size="1x"></fa-icon>
+                        </a>
+                    </li>
+                    <li *ngIf="profile.stackoverflow" class="list-inline-item mb-3">
+                        <a title="Stack Overflow" class="media-bubble bg-primary rounded-circle text-footer mr-3" target="_blank" href="https://www.stackoverflow.com/users/{{profile.stackoverflow}}">
+                            <fa-icon [icon]="['fab', 'stack-overflow']" size="1x"></fa-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="footer-contact-info mb-3 mt-4">
+                    <!--Please Credit Author-->
+                    <fa-icon class="mr-2 text-primary" style="margin-bottom: 18px;" [icon]="['fas', 'globe']" size="lg"></fa-icon><br>
+                    This site is based on <a target="_blank" href="https://github.com/rodolfodiegosilva/myportfolio">angular-dev-portfolio</a>, a free to use, MIT licensed theme created by <a target="_blank" href="https://www.github.com/DarylBuckle">Daryl Buckle</a>.
+
+                </div>
+            </div>
+      </div>
+      <p class="text-footer-text small mt-5 mb-0">Copyright © {{profile.name}} {{year}}</p>
+    </div>
+</footer>

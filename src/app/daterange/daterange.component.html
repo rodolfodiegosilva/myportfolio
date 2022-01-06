@@ -1,0 +1,14 @@
+<span *ngIf="startdate || enddate">
+    <div *ngIf="enddate && !startdate;then onedate else daterange"></div>
+    <ng-template #onedate>
+        {{enddate | date:thisformat}}
+    </ng-template>
+    <ng-template #daterange>
+        <div *ngIf="current;then rolecurrent else rolepast"></div>    
+        <ng-template #rolecurrent>{{startdate | date:thisformat}} - Present</ng-template>
+        <ng-template #rolepast>{{startdate | date:thisformat}} - {{enddate | date:thisformat}}</ng-template>
+        <div *ngIf="showtimespan" style="font-weight: normal;">
+            {{duration}}
+        </div>   
+    </ng-template> 
+</span>

@@ -1,0 +1,14 @@
+<h5 *ngIf="project" class="oneline" title="{{project.name}}">{{ project.name }}</h5>
+<div 
+  *ngIf="project"
+  class="project-item hvr-grow-shadow rounded-lg lift mt-3 mb-2"
+  title="{{project.name}}"
+  [ngStyle]="project.imagestyle"
+  [style.background-image]="'url(' + project.image + ')'"
+>
+    <div *ngIf="!project.image">
+        <div *ngIf="project.icon; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock><fa-icon [icon]="project.icon" size="8x"></fa-icon></ng-template>
+        <ng-template #elseBlock><fa-icon [icon]="['fas', 'code']" size="8x"></fa-icon></ng-template> 
+    </div> 
+</div>

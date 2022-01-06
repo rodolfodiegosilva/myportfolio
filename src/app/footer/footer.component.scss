@@ -1,0 +1,19 @@
+footer{
+    padding: 40px;
+    .media-bubble{
+        height: 4rem;
+        width: 4rem;
+        line-height: 4rem;
+        font-size: 1.4rem;
+        box-shadow: 0 4px 4px 0 rgba(0,0,0,.1);
+        display: block;
+        background-color: #1d809f;
+        transition: background-color .20s ease-in-out;
+        .svg{
+            vertical-align: middle;
+        }
+    }
+    .footer-contact-info{
+        font-size: 18px;
+    }
+}

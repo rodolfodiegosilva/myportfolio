@@ -1,0 +1,52 @@
+<span *ngIf="role" class="timeline-item-duration">
+    <strong>
+        <app-daterange [startdate]="role.startdate" [enddate]="role.enddate" [current]="role.current" [showtimespan]=true></app-daterange>
+    </strong>
+</span>
+<div *ngIf="role" class="mb-4">
+    <h2>{{role.title}}</h2>
+    <h3>
+        <a *ngIf="role.url" target="_blank" href="{{role.url}}">{{role.company}}</a>
+        <span *ngIf="!role.url">{{role.company}}</span>
+    </h3>
+    <a *ngIf="role.location" target="_blank" href="https://www.google.com/maps/place/{{role.location}}">
+        <fa-icon class="mr-2" [icon]="['fas', 'map-marker-alt']" size="lg"></fa-icon>
+        {{role.location}}
+    </a>
+</div>
+<div *ngIf="role && role.positions && role.positions.length > 0" class="mb-4">
+    Positions held;
+    <ul>
+        <li 
+            *ngFor="let postion of role.positions"
+        >
+            {{postion.title}} 
+            <span>
+                <app-daterange [startdate]="postion.startdate" [enddate]="postion.enddate" [current]="postion.current"></app-daterange>
+            </span>
+            
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="role" class="details" [innerHTML]="role.info"></div>
+<div *ngIf="role && role.projects && role.projects.length > 0" class="row justify-content-center text-center mt-5 mb-5">
+    <app-project-item 
+        class="col-md-6 col-lg-6 mb-5" 
+        *ngFor="let i1 of projectiterations"
+        [project]="role.projects[i1]"
+        (click)=selectProject(role.projects[i1])
+    >
+    </app-project-item>
+    <div
+        class="col-md-6 col-lg-6 mb-5" 
+        *ngIf="role.projects.length > projectiterations.length"
+    >
+        <button class="project-more-btn btn btn-link mt-3 mb-2 text-secondary hvr-grow" (click)=loadMoreProjects()>
+            <fa-icon [icon]="['fas' , 'ellipsis-h']" size="4x"></fa-icon>
+            <div>
+                +{{role.projects.length - projectiterations.length}} more projects
+            </div>  
+        </button>
+    </div>
+</div>

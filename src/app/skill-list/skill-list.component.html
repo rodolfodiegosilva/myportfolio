@@ -1,0 +1,14 @@
+<div *ngIf="skillgroups" class="mt-5 mb-4 {{ showprojects ? 'skills-large' : 'skills-small' }}">
+    <div 
+        class="skill-group mt-3 mb-3"
+        *ngFor="let skillgroup of skillgroups"
+    >
+        <h6 class="text-primary">{{skillgroup.name}}</h6>
+        <app-skill-item 
+            *ngFor="let skill of skillgroup.skills"
+            [skill]="skill"
+            [showprojects]="showprojects"
+        >
+        </app-skill-item>
+    </div>
+</div>

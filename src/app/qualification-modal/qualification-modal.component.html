@@ -1,0 +1,42 @@
+<div class="modal-header text-primary">
+    <h3 class="modal-title" id="modal-basic-title">{{qualification ? qualification.name : ""}}</h3>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body qualification-modal" style="padding: 1rem 0">
+    <div *ngIf="qualification"> 
+        <div class="text-center icon-holder mt-1 mb-3">
+            <div *ngIf="qualification.image; then imageBlock else iconBlock"></div>
+            <ng-template #imageBlock>
+                <img src="{{qualification.image}}"/>
+            </ng-template>
+            <ng-template #iconBlock>
+                <div *ngIf="qualification.icon; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock><fa-icon [icon]="qualification.icon" size="6x"></fa-icon></ng-template>
+                <ng-template #elseBlock><fa-icon [icon]="['fas', 'award']" size="6x"></fa-icon></ng-template>
+            </ng-template>
+        </div>
+        <div class="container mt-2 mb-3 text-center">
+            <span *ngIf="qualification.location" class="mb-2">
+                <fa-icon class="mr-2" [icon]="['fas', 'map-marker-alt']" size="1x"></fa-icon>
+                {{qualification.location}}
+                <br>
+            </span>
+            <span class="">
+                <strong *ngIf="qualification.startdate || qualification.enddate" class="text-primary mb-2">
+                    <app-daterange [startdate]="qualification.startdate" [enddate]="qualification.enddate" [current]="qualification.current" [format]="'yyyy'"></app-daterange>
+                </strong>
+            </span>
+            <div class="mt-2 mb-2">
+                <span *ngIf="qualification.grade" class="font-weight-bold">Grade: {{qualification.grade}}</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="details" [innerHTML]="qualification.info"></div>
+        </div>
+    </div>
+    <div class="modal-footer text-center justify-content-center">
+        <button type="button" class="btn btn-primary text-primary-text" data-dismiss="modal" (click)="activeModal.dismiss('Cross click')">Close</button>
+    </div>
+</div>
