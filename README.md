@@ -1,161 +1,70 @@
-# Angular Dev Portfolio
+# Getting Started with Create React App
 
-A simple portfolio or cv page aimed at developers, built with Angular (v9.1.9), Bootstrap and Font Awesome.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[Example: https://github.com/rodolfodiegosilva/myportfolio](https://github.com/rodolfodiegosilva/myportfolio)
+## Available Scripts
 
-## Contents
+In the project directory, you can run:
 
-* [Usage and customisation](#usage-and-customisation)
-  * [Data](#data)
-    * [Profile properties](#profile-properties)
-    * [Project properties](#project-properties)
-    * [Role properties](#role-properties)
-    * [Qualification properties](#qualification-properties)
-    * [Skill properties](#skill-properties)
-  * [Theme](#theme)
-  * [Branding](#branding)
-  * [Images](#images)
-* [Development Server](#development-server)
-* [Build](#build)
-* [License](#license)
+### `npm start`
 
-<br/>
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Usage and customisation
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Select "Use this template" or Fork this repository to get started.
+### `npm test`
 
-### Data
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-All content besides images and the page title resides in [data.ts](./src/app/data.ts). All you need to do is swap the example data with your own data.
+### `npm run build`
 
-[data.js](./src/app/data.ts) exports a [Profile](./src/app/_Classes/profile.ts) object, which has the following properties.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-##### Profile properties
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-| Property | Type | Mandatory | Description |
-| -------- |------| ----------| ------------|
-|    name | string  | true | Your name. |
-|    title | string  | true | Your current job title. |
-|    location  | string  | false | Your current location. |
-|    projects  | Project[]  | false | A list of your own projects outside of employment. |
-|    roles  | Role[]  | false | A list of companies that you have been employed at. |
-|    qualifications | Qualification[]  | false | A list of your qualifications. |
-|    skills  | Skill[]  | false | A list of skills and/ore technologies that you have worked with. |
-|    linkedin  | string  | false | Your LinkedIn user name. If set this will show in the footer. |
-|    twitter  | string  | false | Your Twitter user name. If set this will show in the footer. |
-|    facebook  | string  | false | Your Facebook user name. If set this will show in the footer. |
-|    instagram  | string  | false | Your Instagram user name. If set this will show in the footer. |
-|    github  | string  | false | Your GitHub profile user name. If set this will show in the footer. |
-|    stackoverflow  | string  | false | Your Stack Overflow profile user id. If set this will show in the footer. |
-|    email  | string  |  false | Your contact email address. This will show in the footer if set. |
-|    mailto  | string  |  false | Email Address where the contact button will send to. |
-|    about  | string  | false | More information about you. This will show in the About section. Accepts html. |
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-<br/>
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-##### Project properties
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-| Property | Type | Mandatory | Description |
-| -------- |------| ----------| ------------|
-|   name | string | false | The name/title of the project. |
-|    owner | string | true | The person or company who owns the project |
-|    role | string | false | Enter the name of the company used in the 'company' property of the 'role' model if applicable. |
-|    icon | object | false | A font awesome icon to show for this qualification. |
-|    image | string | false | The url of an image to show instead of an icon. This can be the url of a public image or the path of a local asset. |
-|    imagestyle | object | false | If image is set you can use this to apply custom styles to the image. |
-|    images | string[] | false | This will show multiple images in a carousel on the modal screen instead of 'image'. |
-|    url | string | false | A link to more information about the project. Will show on the modal screen. |
-|    private | boolean | false | Whether the source code is public or private. |
-|    startdate | Date | false | When you started working on the project. Must have either 'enddate' set or 'current' === true. |
-|    enddate | Date | false | When you finished working on the project. If 'startdate' is not set only the enddate will show. |
-|    current | boolean | false | Whether you are still working on this project. |
-|    skills | Skill[] | false | A list of skills/technologies relating to the project. The project will then show in the skills section. |
-|    info | string | false | Additional details. Shows on modal screen only. Accepts html. |
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-<br/>
+## Learn More
 
-##### Role properties
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-| Property | Type | Mandatory | Description |
-| -------- |------| ----------| ------------|
-|    title |  string | true | Your job title. |
-|    company |  string | true | The name of the company. |
-|    location |  string | false | Your place of work. |
-|    url |  string | false | A link to the companies website. The companies name on the timeline becomes a link if set. |
-|    startdate | Date | false | When you started employment. Must have either 'enddate' set or 'current' === true. |
-|    enddate |  Date | false | When you finished employment. |
-|    current |  boolean | false | Whether you are still employed. |
-|    positions |  Role[] | false | A list of positions held at the company included start and end dates. |
-|    projects |  Project[] | false | A list of projects worked on at the company. |
-|    info |  string | false | Additional details. Accepts html. |
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-<br/>
+### Code Splitting
 
-##### Qualification properties
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-| Property | Type | Mandatory | Description |
-| -------- |------| ----------| ------------|
-|    name |  string | true | The name/title of the qualifcation. |
-|    location |  string | false | The place of study. |
-|    grade |  string | false | Grade obtained. |
-|    icon |  object | false | A font awesome icon to show for this qualification. |
-|    image |  string | false | The url of an image to show instead of an icon. This can be the url of a public image or the path of a local asset. |
-|    imagestyle |  object | false | If image is set you can use this to apply custom styles to the image. |
-|    startdate |  Date | false | When you started studying. Must have either 'enddate' set or 'current' === true. |
-|    enddate |  Date | false | When you finished/gained the qualifcation. If 'startdate' is not set only the enddate will show. |
-|    current |  boolean | false | Whether you are still studying for this qualification. |
-|    info |  string | false | Additional details. Shows on modal screen only. Accepts html. |
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-<br/>
+### Making a Progressive Web App
 
-##### Skill properties
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-| Property | Type | Mandatory | Description |
-| -------- |------| ----------| ------------|
-|    name |  string | true | Name of the skill. |
-|    group |  string | true | What group to show the skill under. If empty string no group header will be shown. |
-|    level |  number | false | A number ranging from 0-100 to determine your skill level. |
+### Advanced Configuration
 
-<br/>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Theme
+### Deployment
 
-The template uses Bootstrap so is very easy to alter the colours.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-The colour palette can be changed by altering the values in `$theme-colors` in [/src/theme.scss](./src/theme.scss).
+### `npm run build` fails to minify
 
-### Branding
-
-The "My Portfolio" on the navigation bar is an image which can be replaced in [/src/assets/images/logo.png](./src/assets/images/logo.png). This is rendered in [/src/app/nav-bar/nav-bar.component.html](./src/app/nav-bar/nav-bar.component.html) so the image format can be changed here or the image can be replaced with text.
-
-The Profile Picture on the header is an image which can be replaced in [/src/assets/images/profile.png](./src/assets/images/profile.png). This is rendered in [/src/app/avatar/avatar.component.html](./src/app/avatar/avatar.component.html) so the image format can be changed here.
-
-The page title can be altered in [/src/index.html](./src/index.html).
-
-### Images
-
-Add your own images of your projects or qualifications to the [/src/assets/images/](./src/assets/images/) directory. You can then reference these in data.js using `assets/images/yourimage.png`.
-
-<br/>
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-<br/>
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-
-<br/>
-
-## License
-
-MIT Licensed. Copyright (c) Daryl Buckle 2020.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
